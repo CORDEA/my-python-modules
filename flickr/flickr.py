@@ -26,7 +26,7 @@ def getTags(apikey, query, page=1):
 
     params = {
         'method': 'flickr.photos.search',
-        'api_key': key,
+        'api_key': apikey,
         'text': query,
         'tags': query,
         'per_page': str(page),
@@ -37,7 +37,10 @@ def getTags(apikey, query, page=1):
     full_url = url + '?' + url_values
 
     jsondata = urllib2.urlopen(full_url)
-    data     = json.load(jsondata)["photos"]["photo"][0]
+    try:
+        data     = json.load(jsondata)["photos"]["photo"][0]
+    except:
+        data = {"farm": 0, "server": 0, "secret": 0, "id": 0}
 
     _farm   = data["farm"]
     _server = data["server"]
