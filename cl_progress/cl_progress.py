@@ -42,4 +42,4 @@ def printResult(sent, flag):
     spaces = width - (len(sent) + len(result))
 
     sys.stdout.write('%s%s'   % (colors['clear'], sent + (' ' * spaces)))
-    sys.stdout.write('%s%s\n' % (colors[color], result))
+    sys.stdout.write('%s%s%s\n' % (colors[color], result, colors['clear']))
