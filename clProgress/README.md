@@ -1,4 +1,4 @@
-# cl_progress
+# clProgress
 
 ## usage
 
