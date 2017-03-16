@@ -1,15 +1,15 @@
-# sendMailFromGmail
+# send_gmail
 
-## usage
+## Usage
 
-First open "sendMailFromGmail.py", please enter your address and password.
+First open "send_gmail.py", please enter your address and password.
 
 ```python
-from sendMailFromGmail import *
+from send_gmail import *
 
 sub = "Hello"
 msg = "World!"
 address = "hogehoge@huge.com"
 
-sendMail(sub, msg, address)
+send_gmail(sub, msg, address)
 ```
