@@ -20,7 +20,7 @@ __date__   =  "2015-01-13"
 import smtplib
 from email.mime.text import MIMEText
 
-def sendMail(sub, msg, address):
+def send_gmail(sub, msg, address):
     From    = "your gmail address"
     To      = address
     Subject = sub
