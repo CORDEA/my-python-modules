@@ -17,7 +17,7 @@
 __Author__ =  "Yoshihiro Tanaka"
 __date__   =  "2015-02-02"
 
-def printResult(sent, flag):
+def progress(sent, flag):
     import sys, commands
 
     _SUC = '[SUCCEED]'
