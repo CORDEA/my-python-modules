@@ -14,23 +14,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-__Author__ =  "Yoshihiro Tanaka"
-__date__   =  "2015-01-30"
+__Author__ = "Yoshihiro Tanaka"
+__date__ = "2015-01-30"
 
 import json
 import urllib, urllib2, base64
 
+
 def getImageUrl(apikey, query, count=1):
     url = 'https://api.datamarket.azure.com/Bing/Search/v1/Image'
-    params = {
-            '$format': 'json',
-            'Query': "'%s'" % query,
-            'Adult': "'Strict'"
-            }
-    
+    params = {'$format': 'json', 'Query': "'%s'" % query, 'Adult': "'Strict'"}
+
     url_values = urllib.urlencode(params)
     full_url = url + '?' + url_values
-
     u""" Basic Authentication
 
     ref. http://www.voidspace.org.uk/python/articles/authentication.shtml
@@ -43,7 +39,7 @@ def getImageUrl(apikey, query, count=1):
     request.add_header('Authorization', 'Basic ' + base64string)
 
     jsondata = urllib2.urlopen(request)
-    data     = json.load(jsondata)['d']['results']
+    data = json.load(jsondata)['d']['results']
 
     returnList = []
     for i in range(count):

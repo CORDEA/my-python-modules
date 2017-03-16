@@ -14,15 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-__Author__ =  "Yoshihiro Tanaka"
-__date__   =  "2015-01-27"
+__Author__ = "Yoshihiro Tanaka"
+__date__ = "2015-01-27"
 
 import json
 import urllib, urllib2
 
+
 def getTags(apikey, query, page=1):
     #ref. http://docs.python.jp/2/howto/urllib2.html 
-    url   = 'https://api.flickr.com/services/rest/'
+    url = 'https://api.flickr.com/services/rest/'
 
     params = {
         'method': 'flickr.photos.search',
@@ -32,21 +33,18 @@ def getTags(apikey, query, page=1):
         'per_page': str(page),
         'format': 'json',
         'nojsoncallback': '1'
-        }
+    }
     url_values = urllib.urlencode(params)
     full_url = url + '?' + url_values
 
     jsondata = urllib2.urlopen(full_url)
     try:
-        data     = json.load(jsondata)["photos"]["photo"][0]
+        data = json.load(jsondata)["photos"]["photo"][0]
     except:
         data = {"farm": 0, "server": 0, "secret": 0, "id": 0}
 
-    _farm   = data["farm"]
+    _farm = data["farm"]
     _server = data["server"]
     _secret = data["secret"]
-    _id     = data["id"]
-    return {"farm": _farm,
-            "server": _server,
-            "secret": _secret,
-            "id": _id}
+    _id = data["id"]
+    return {"farm": _farm, "server": _server, "secret": _secret, "id": _id}

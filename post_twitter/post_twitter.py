@@ -14,22 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-__Author__ =  "Yoshihiro Tanaka"
-__date__   =  "2015-02-10"
+__Author__ = "Yoshihiro Tanaka"
+__date__ = "2015-02-10"
 
 from requests_oauthlib import OAuth1Session
 import sys
 
+
 def post_twitter(keys, status):
     key, c_secret, token, t_secret = keys
-    url      = "https://api.twitter.com/1.1/statuses/update.json"
+    url = "https://api.twitter.com/1.1/statuses/update.json"
 
-    params = {
-                "status": status
-                }
+    params = {"status": status}
 
     twitter = OAuth1Session(key, c_secret, token, t_secret)
-    request = twitter.post(url, params = params)
+    request = twitter.post(url, params=params)
 
     if request.status_code != 200:
         sys.stderr.write(str(request.status_code) + '\n')

@@ -14,8 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-__Author__ =  "Yoshihiro Tanaka"
-__date__   =  "2015-01-30"
+__Author__ = "Yoshihiro Tanaka"
+__date__ = "2015-01-30"
 
 from jinja2 import Environment, FileSystemLoader
 from bing import bing
@@ -23,8 +23,7 @@ import sys
 
 tmpldir = './'
 env = Environment(
-    loader = FileSystemLoader(tmpldir, encoding='utf-8'),
-    autoescape = False)
+    loader=FileSystemLoader(tmpldir, encoding='utf-8'), autoescape=False)
 tmpl = env.get_template('template.html')
 
 key = "bing api key"
@@ -36,4 +35,4 @@ with open(sys.argv[1]) as f:
         spDict[species] = bing.getImageUrl(key, species)[0]
 
 with open("result.html", 'w') as f:
-    f.write(tmpl.render(species = spDict))
+    f.write(tmpl.render(species=spDict))

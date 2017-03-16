@@ -14,22 +14,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-__Author__ =  "Yoshihiro Tanaka"
-__date__   =  "2015-01-13"
+__Author__ = "Yoshihiro Tanaka"
+__date__ = "2015-01-13"
 
 import smtplib
 from email.mime.text import MIMEText
 
+
 def send_gmail(sub, msg, address):
-    From    = "your gmail address"
-    To      = address
+    From = "your gmail address"
+    To = address
     Subject = sub
     Message = msg
 
-    msg  = MIMEText(Message)
+    msg = MIMEText(Message)
     msg['Subject'] = Subject
-    msg['From']    = From
-    msg['To']      = To
+    msg['From'] = From
+    msg['To'] = To
 
     s = smtplib.SMTP('smtp.gmail.com', 587)
     s.ehlo()

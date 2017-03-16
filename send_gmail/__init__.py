@@ -14,5 +14,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-__Author__ =  "Yoshihiro Tanaka"
-__date__   =  "2015-01-13"
+__Author__ = "Yoshihiro Tanaka"
+__date__ = "2015-01-13"
