@@ -28,11 +28,11 @@ tmpl = env.get_template('template.html')
 
 key = "bing api key"
 
-spDict = {}
+sp_dict = {}
 with open(sys.argv[1]) as f:
     for line in f:
         species = line.rstrip()
-        spDict[species] = bing.getImageUrl(key, species)[0]
+        sp_dict[species] = bing.get_image_url(key, species)[0]
 
 with open("result.html", 'w') as f:
-    f.write(tmpl.render(species=spDict))
+    f.write(tmpl.render(species=sp_dict))

@@ -21,7 +21,7 @@ import json
 import urllib, urllib2, base64
 
 
-def getImageUrl(apikey, query, count=1):
+def get_image_url(apikey, query, count=1):
     url = 'https://api.datamarket.azure.com/Bing/Search/v1/Image'
     params = {'$format': 'json', 'Query': "'%s'" % query, 'Adult': "'Strict'"}
 
